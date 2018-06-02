@@ -11,18 +11,30 @@ A theme for oh-my-bash based on builtin powerline theme,  with nerd font require
 2. `homebrew`
 
 ## How to Use it?
-1. install `oh-my-bash` from `https://ohmybash.github.io`
-3. install me
+1. install latest bash to `/usr/local/bin/bash`.
+```bash
+brew install bash
+```
+2. make sure your default shell is bash 4+ instead of built-in one.
+```bash
+echo '/usr/local/bin/bash' | sudo tee -a /etc/shells
+sudo chsh -s /usr/local/bin/bash $USER
+```
+3. install `oh-my-bash` from `https://ohmybash.github.io`.
+```bash
+sh -c "$(curl -fsSL https://raw.github.com/ohmybash/oh-my-bash/master/tools/install.sh)"
+```
+4. install this theme.
 ```bash
 git clone https://github.com/iamfat/oh-my-genee-theme $HOME/.oh-my-bash/custom/themes/genee
 ```
-4. install nerd font
+4. install nerd font.
 ```bash
 brew tap caskroom/fonts
 brew cask install font-hack-nerd-font
 ```
-5. update `.bashrc`
+5. update `.bashrc` to load genee theme.
 ```bash
-OSH_THEME="genee"
+sed -i 's/^OSH_THEME=.*$/OSH_THEME="genee"/' $HOME/.bashrc
 ```
 
